@@ -1,0 +1,144 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Lightred: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Offwhite: hsl(0, 0%, 94%);
+  --Lightgrey: hsl(0, 0%, 86%);
+  --Smokeygrey: hsl(0, 1%, 44%);
+  --Offblack: hsl(0, 0%, 8%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Offwhite);
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: var(--Offblack);
+}
+
+.main {
+  background-color: var(--White);
+  padding: 40px;
+  border-radius: 20px;
+  border-bottom-right-radius: 100px;
+  width: 70vw;
+  max-width: 720px;
+}
+
+.form {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form>div {
+  width: 23%;
+  position: relative;
+}
+
+.form input {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  border: 1px solid var(--Lightgrey);
+  font-size: 28px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.form input:focus {
+  outline: 1px solid var(--Purple);
+}
+
+.form label {
+  color: var(--Smokeygrey);
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+.form > span {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 75px;
+  background-color: var(--Purple);
+  border-radius: 50%;
+  right: 0;
+  bottom: -50px;
+  translate: 0 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.main hr {
+  border: none;
+  background-color: var(--Lightgrey);
+  height: 1px;
+  margin-bottom: 30px;
+}
+
+.results {
+  font-size: 65px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.results span:first-child {
+  color: var(--Purple);
+}
+
+@media (max-width:767px) {
+  .main {
+    width: calc(100vw - 20px);
+  }
+
+  .main input {
+    font-size: 16px;
+  }
+
+  .form>div {
+    width: calc(100% / 3);
+  }
+
+  .main .form {
+    gap: 10px;
+  }
+
+  .form > span {
+    width: 50px;
+    right: 50%;
+    translate: 50% 50%;
+  }
+
+  .results {
+    font-size: 35px;
+    max-width: 100%;
+  }
+
+  body * {
+    max-width: 100vw;
+  }
+}
+
+.form div span{
+  position: absolute;
+  color: var(--Lightred);
+  font-style: italic;
+  font-weight: 400;
+  left: 3px;
+  font-size: 12px;
+}

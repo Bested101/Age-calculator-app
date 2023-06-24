@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="main">
+    <div class="form">
+      <div class="dayInput">
+        <label for="day">DAY</label>
+        <input type="text"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+          name="itemConsumption" placeholder="DD">
+        <span></span>
+      </div>
+      <div class="monthInput">
+        <label for="month">MONTH</label>
+        <input type="text"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+          name="itemConsumption" placeholder="MM">
+        <span></span>
+      </div>
+      <div class="yearInput">
+        <label for="year">YEAR</label>
+        <input type="text" pattern="\d{4}"
+          onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
+          name="itemConsumption" placeholder="YYYY">
+        <span></span>
+      </div>
+      <span><img src="assets/images/icon-arrow.svg" alt=""></span>
+    </div>
+    <hr>
+    <div class="results">
+      <div class="years">
+        <span>--</span>
+        <span>years</span>
+      </div>
+      <div class="months">
+        <span>--</span>
+        <span>months</span>
+      </div>
+      <div class="days">
+        <span>--</span>
+        <span>days</span>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
