@@ -20,21 +20,21 @@
         <label for="day">DAY</label>
         <input type="text"
           onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
-          name="itemConsumption" placeholder="DD">
+          name="itemConsumption" placeholder="DD" autocomplete="off">
         <span></span>
       </div>
       <div class="monthInput">
         <label for="month">MONTH</label>
         <input type="text"
           onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
-          name="itemConsumption" placeholder="MM">
+          name="itemConsumption" placeholder="MM" autocomplete="off">
         <span></span>
       </div>
       <div class="yearInput">
         <label for="year">YEAR</label>
         <input type="text" pattern="\d{4}"
           onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57"
-          name="itemConsumption" placeholder="YYYY">
+          name="itemConsumption" placeholder="YYYY" autocomplete="off">
         <span></span>
       </div>
       <span><img src="assets/images/icon-arrow.svg" alt=""></span>

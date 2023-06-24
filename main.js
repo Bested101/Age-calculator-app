@@ -34,6 +34,12 @@ submit.onclick = () => {
   }
 };
 
+inputs.forEach((el)=>{
+  el.onpaste = () =>{
+    return false
+  }
+})
+
 function calcAge(dob) {
   let age = new Date() - dob;
   years.innerHTML = Math.trunc(age / 3.154e10);
