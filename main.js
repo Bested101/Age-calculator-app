@@ -38,6 +38,9 @@ inputs.forEach((el)=>{
   el.onpaste = () =>{
     return false
   }
+  el.ondrop = () => {
+    return false;
+  };
 })
 
 function calcAge(dob) {
