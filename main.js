@@ -34,22 +34,41 @@ submit.onclick = () => {
   }
 };
 
-inputs.forEach((el)=>{
-  el.onpaste = () =>{
-    return false
-  }
-  el.ondrop = () => {
-    return false;
-  };
-})
+
 
 function calcAge(dob) {
   let age = new Date() - dob;
-  years.innerHTML = Math.trunc(age / 3.154e10);
-  let yearFloat = age / 3.154e10 - years.innerHTML;
-  months.innerHTML = Math.trunc(yearFloat * 12);
+  let yearCount = Math.trunc(age / 3.154e10);
+  let yearFloat = age / 3.154e10 - yearCount;
+  let monthsCount = Math.trunc(yearFloat * 12);
   let monthFloat = age / 2.628e9 - Math.trunc(age / 2.628e9);
-  days.innerHTML = Math.trunc(monthFloat * 30.417);
+  let dayscount = Math.trunc(monthFloat * 30.417);
+  countUp(yearCount , monthsCount , dayscount)
+}
+
+function countUp(yCount , mCount , dCount){
+  years.innerHTML = 0
+  months.innerHTML = 0;
+  days.innerHTML = 0;
+  let yearUp = setInterval(() => {
+    years.innerHTML = +years.innerHTML + 1;
+    if (years.innerHTML == yCount){
+      let monthUp = setInterval(() => {
+        months.innerHTML = +months.innerHTML + 1;
+        if (months.innerHTML == mCount) {
+          let dayUp = setInterval(() => {
+            days.innerHTML = +days.innerHTML + 1;
+            if (days.innerHTML == dCount) {
+              clearInterval(dayUp);
+            }
+          }, 40);
+          clearInterval(monthUp);
+        }
+      }, 40);
+      clearInterval(yearUp)
+    }
+  }, 40);
+  ;
 }
 
 function errorMesg(ele, message = "") {
@@ -82,3 +101,12 @@ function styles(ele) {
   ele.children[1].style.borderColor = "hsl(0, 0%, 86%)";
   ele.children[2].innerHTML = "";
 }
+
+inputs.forEach((el)=>{
+  el.onpaste = () =>{
+    return false
+  }
+  el.ondrop = () => {
+    return false;
+  };
+})
